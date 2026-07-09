@@ -1,0 +1,2 @@
+# Analytics / tracking domains
+# One domain per line, no protocol, no path

@@ -1,0 +1,8 @@
+! Native Adblock-syntax rules (cosmetic filters, exceptions, path/wildcard rules).
+! Appended as-is to dist/adblock.txt. Not usable by DNS-based blockers.
+!
+! Example cosmetic filter (element hiding):
+! example.com##.ad-banner
+!
+! Example exception:
+! @@||example.com/allowed-ads.js

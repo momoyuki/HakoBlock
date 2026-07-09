@@ -1,0 +1,35 @@
+name: Build filter list
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "sources/**"
+      - "build/**"
+  schedule:
+    - cron: "0 0 * * 1" # weekly, refreshes "Last modified" header
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Commit dist/hakoblock.txt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/hakoblock.txt
+          git diff --cached --quiet || git commit -m "chore: rebuild hakoblock.txt"
+          git push

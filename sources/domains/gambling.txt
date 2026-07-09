@@ -1,0 +1,2 @@
+# Gambling / online betting / slot sites
+# One domain per line, no protocol, no path
