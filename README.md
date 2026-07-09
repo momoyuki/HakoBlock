@@ -12,13 +12,7 @@ https://raw.githubusercontent.com/momoyuki/HakoBlock/main/dist/hakoblock.txt
 
 ## Contributing a domain
 
-Add the domain (one per line) to the relevant file under `sources/domains/`:
-
-- `thai-ads.txt` — Thai ad-serving domains
-- `gambling.txt` — gambling / betting / slot sites
-- `tracker.txt` — analytics/tracking domains
-
-For native uBlock rules (element hiding, exceptions, path-level rules), edit `sources/ublock-rules.txt` directly using [Adblock filter syntax](https://help.eyeo.com/adblockplus/how-to-write-filters).
+See [CONTRIBUTING.md](CONTRIBUTING.md) — open an [issue](../../issues/new?template=add-domain.yml) if you're not comfortable with git, or send a PR directly.
 
 Push to `main` and the list rebuilds automatically via GitHub Actions.
 
