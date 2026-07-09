@@ -1,5 +1,6 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
+import { execSync } from "node:child_process";
 
 const ROOT = join(__dirname, "..");
 const DOMAINS_DIR = join(ROOT, "sources", "domains");
@@ -30,6 +31,14 @@ function collectDomains(): string[] {
   return [...domains].sort();
 }
 
+function getCommitHash(): string {
+  try {
+    return execSync("git rev-parse --short HEAD", { cwd: ROOT }).toString().trim();
+  } catch {
+    return "unknown";
+  }
+}
+
 function buildHeader(): string {
   const lastModified = new Date().toISOString().replace("T", " ").slice(0, 19) + " UTC";
   return [
@@ -38,6 +47,7 @@ function buildHeader(): string {
     `! Last modified: ${lastModified}`,
     `! Expires: ${EXPIRES_DAYS} days (update frequency)`,
     `! Description: ${DESCRIPTION}`,
+    `! Source commit: ${getCommitHash()}`,
     "",
   ].join("\n");
 }

@@ -1,3 +1,12 @@
+! Title: HakoBlock
+! Homepage: https://github.com/momoyuki/HakoBlock
+! Last modified: 2026-07-09 01:33:42 UTC
+! Expires: 4 days (update frequency)
+! Description: Thai ads, gambling, and tracker filter list for uBlock Origin
+! Source commit: e13850f
+
+
+
 ! Native Adblock-syntax rules (cosmetic filters, exceptions, path/wildcard rules).
 ! Appended as-is to dist/hakoblock.txt. Not usable by DNS-based blockers.
 !
