@@ -1,9 +1,9 @@
 ! Title: HakoBlock
 ! Homepage: https://github.com/momoyuki/HakoBlock
-! Last modified: 2026-08-24 00:55:32 UTC
+! Last modified: 2026-08-31 02:58:07 UTC
 ! Expires: 4 days (update frequency)
 ! Description: Thai ads, gambling, and tracker filter list for uBlock Origin
-! Source commit: 1bdb799
+! Source commit: 3290900
 
 
 
